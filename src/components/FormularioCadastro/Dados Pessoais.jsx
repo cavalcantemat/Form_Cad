@@ -10,6 +10,12 @@ function DadosPessoais({ aoEnviar, validacoes }) {
     const [novidades, setNovidades] = useState(true);
     const [erros, setErros] = useState({ cpf: { valido: true, texto: "" } })
 
+    function validaCampos(event) {
+        const { name, value } = event.target;
+        const valido = validacoes[name](value);
+        const novoEstado = { ...erros, name: valido }
+        setErros(novoEstado);
+    }
 
     return (
         <form
@@ -51,13 +57,11 @@ function DadosPessoais({ aoEnviar, validacoes }) {
                     setCPF(event.target.value);
                 }}
 
-                onBlur={(event) => {
-                    const valido = validacoes(event.target.value);
-                    setErros({ cpf: valido })
-                }}
+                onBlur={validaCampos}
                 error={!erros.cpf.valido}
                 helperText={erros.cpf.texto}
                 id="cpf"
+                name="cpf"
                 label="CPF"
                 variant="outlined"
                 margin="normal"
