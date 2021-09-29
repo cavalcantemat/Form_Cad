@@ -1,7 +1,8 @@
 import './App.css';
 import FormularioCadastro from './components/FormularioCadastro/FormularioCadastro';
 import { Container, Typography } from '@material-ui/core';
-import {validaCpf, validaSenha} from "./models/cadastro" 
+import { validaCpf, validaSenha } from "./models/cadastro"
+import ValidacaoCadastro from './contexts/ValidacaoCadastro';
 
 function App() {
   return (
@@ -12,7 +13,10 @@ function App() {
         component="h1">
         FORMULARIO DE CADASTRO
       </Typography>
-      <FormularioCadastro aoEnviar={aoEnviarForm} validacoes={{cpf: validaCpf, senha: validaSenha}} />
+      <ValidacaoCadastro.Provider value={{ cpf: validaCpf, senha: validaSenha, nome: validaSenha }}>
+
+      </ValidacaoCadastro.Provider>
+      <FormularioCadastro aoEnviar={aoEnviarForm} />
     </Container>
   );
 

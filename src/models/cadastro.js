@@ -7,7 +7,7 @@ function validaCpf(cpf) {
 
 
 function validaSenha(senha) {
-  if (senha.length < 4 || senha.length > 72) {
+  if (senha.length <= 4 || senha.length > 72) {
     return { valido: false, texto: "A senha deve ter entre 4 dígitos e 72 dígitos" }
   } else return { valido: false, texto: "" }
 }

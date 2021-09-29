@@ -1,15 +1,14 @@
-// import './estilo.css';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button, TextField, Box } from '@material-ui/core';
+import ValidacaoCadastro from "../../contexts/ValidacaoCadastro"
 
-
-
-function DadosUsuario({ aoEnviar }) {
+function DadosUsuario({ aoEnviar}) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
-    const [erros, setErros] = useState({ senha: { valido: true, texto: "" } })
+    const [erros, setErros] = useState({ senha: { valido: true, texto: "" } });
 
+    const validacoes = useContext(ValidacaoCadastro)
     function validaCampos(event) {
         const { name, value } = event.target;
         const novoEstado = { ...erros};
@@ -28,16 +27,20 @@ function DadosUsuario({ aoEnviar }) {
 
     return (
 
-        <form onSubmit={(event) => {
+        <form 
+            onSubmit={(event) => {
             event.preventDefault();
-            if(possoEnviar()) {
-                aoEnviar({email, senha});
-            }
-        }}>
+            if (possoEnviar()) {
+                aoEnviar({ email, senha });
+            }}}>
+        
             <TextField
                 value={email}
-                onChange={(event) => { setEmail(event.target.value) }}
+                onChange={(event) => { 
+                    setEmail(event.target.value) 
+                }}
                 id="email"
+                name="email"
                 label="Email"
                 type="email"
                 variant="outlined"
@@ -48,10 +51,14 @@ function DadosUsuario({ aoEnviar }) {
             <TextField
 
                 value={senha}
-                onChange={validaCampos}
+                onChange={(event) => {
+                    setSenha(event.target.value);
+                }}
+                onBlur={validaCampos}
                 error={!erros.senha.valido}
                 helperText={erros.senha.valido}
-                id="password"
+                id="senha"
+                name="senha"
                 label="Senha"
                 type="password"
                 variant="outlined"
@@ -59,13 +66,13 @@ function DadosUsuario({ aoEnviar }) {
                 required
                 fullWidth
             />
-            <Box sx={{ width: 500 }} >
-                <Button
+            <Box>
+                {/* <Button
                     variant="contained"
                     color="primary"
                     type="submit">
                     Voltar
-                </Button>
+                </Button> */}
 
                 <Button
                     variant="contained"
