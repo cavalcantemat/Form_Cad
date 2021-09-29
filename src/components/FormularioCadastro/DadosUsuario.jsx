@@ -8,6 +8,7 @@ function DadosUsuario({ aoEnviar }) {
     const [senha, setSenha] = useState("");
     const validacoes = useContext(ValidacaoCadastro)
     const [erros, validaCampos, possoEnviar] = useErros(validacoes);
+    
 
 
     return (
