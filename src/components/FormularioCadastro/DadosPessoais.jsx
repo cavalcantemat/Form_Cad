@@ -13,6 +13,11 @@ function DadosPessoais({ aoEnviar }) {
     const validacoes = useContext(ValidacaoCadastro)
     const [erros, validaCampos, possoEnviar] = useErros(validacoes);
 
+    function witchButton() {
+        const nextButton = document.getElementById('avancar').clicked
+        const backButton = document.getElementById('voltar').clicked  
+    }
+
     return (
         <form
       onSubmit={(event) => {
@@ -92,8 +97,11 @@ function DadosPessoais({ aoEnviar }) {
           />
         }
       />
+    <Button id="voltar" type="submit" variant="contained" color="primary">
+        Voltar
+      </Button>
 
-      <Button type="submit" variant="contained" color="primary">
+      <Button onClick={witchButton} id="avancar" type="submit" variant="contained" color="primary">
         Próximo
       </Button>
     </form>
