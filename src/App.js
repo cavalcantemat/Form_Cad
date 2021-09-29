@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import './App.css';
-import FormularioCadastro from './components/FormularioCadastro/FormularioCadastro';
-import { Container, Typography } from '@material-ui/core';
-import ValidacaoCadastro from './contexts/ValidacaoCadastro';
+import "./App.css";
+import FormularioCadastro from "./components/FormularioCadastro/FormularioCadastro";
+import { Container, Typography } from "@material-ui/core";
+
+import ValidacaoCadastro from "./contexts/ValidacaoCadastro";
 
 import { validaCpf, validaSenha } from "./models/cadastro";
 class App extends Component {

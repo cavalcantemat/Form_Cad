@@ -4,7 +4,6 @@ import { Button, TextField } from '@material-ui/core';
 //import { getAddress } from 'address-br';
 
 function DadosEntrega({ aoEnviar }) {
-
     const [cep, setCep] = useState("");
     const [numero, setNumero] = useState("");
     const [complemento, setComplemento] = useState("");
@@ -117,7 +116,7 @@ function DadosEntrega({ aoEnviar }) {
             </Button>
 
         </form>
-    )
+    );
 }
 
 export default DadosEntrega;
