@@ -1,6 +1,7 @@
 // import './estilo.css'
 import React, { useState } from 'react';
 import { Button, TextField } from '@material-ui/core';
+//import { getAddress } from 'address-br';
 
 function DadosEntrega({ aoEnviar }) {
 
@@ -10,6 +11,12 @@ function DadosEntrega({ aoEnviar }) {
     const [endereco, setEndereco] = useState("");
     const [estado, setEstado] = useState("");
     const [cidade, setCidade] = useState("");
+
+    // async function BuscaEndereco() {
+    //     const address = getAddress(13253616); 
+    //     const {bairro, cidade, estado, rua} = address;
+    //     console.log(bairro,"\n", cidade,"\n", estado,"\n", rua);
+    //     }
 
     return (
         <form onSubmit={
@@ -33,9 +40,8 @@ function DadosEntrega({ aoEnviar }) {
 
             <Button
                 variant="text"
-                color="secondary"
-                type="submit">
-                Não sei meu CEP
+                color="secondary">
+                Não sei meu CEP 
             </Button>
 
             <TextField
