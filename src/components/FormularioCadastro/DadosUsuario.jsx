@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Button, TextField, Box } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 import ValidacaoCadastro from "../../contexts/ValidacaoCadastro"
 import useErros from '../../hooks/useErros';
 
@@ -26,7 +26,7 @@ function DadosUsuario({ aoEnviar}) {
         }}
         id="email"
         name="email"
-        label="email"
+        label="Email"
         type="email"
         required
         variant="outlined"
@@ -43,20 +43,20 @@ function DadosUsuario({ aoEnviar}) {
         helperText={erros.senha.texto}
         id="senha"
         name="senha"
-        label="senha"
+        label="Senha"
         type="password"
         required
         variant="outlined"
         margin="normal"
         fullWidth
       />
-            <Box>
-                {/* <Button
+            <div className="area-botoes">
+                  <Button
                     variant="contained"
                     color="primary"
                     type="submit">
                     Voltar
-                </Button> */}
+                </Button>
 
                 <Button
                     variant="contained"
@@ -64,7 +64,7 @@ function DadosUsuario({ aoEnviar}) {
                     type="submit">
                     Avançar
                 </Button>
-            </Box>
+            </div>
 
         </form>
     )

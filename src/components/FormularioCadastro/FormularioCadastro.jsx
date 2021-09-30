@@ -31,10 +31,6 @@ function FormularioCadastro({ aoEnviar }) {
         setEtapaAtual(etapaAtual + 1);
     }
 
-    function voltar() {
-        setEtapaAtual(etapaAtual - 1);
-    }
-
     return (
         <>
             <Stepper activeStep={etapaAtual}>
