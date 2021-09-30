@@ -24,7 +24,7 @@ function DadosEntrega({ aoEnviar }) {
                 aoEnviar({ cep, endereco, numero, estado, cidade });
             }}>
 
-            <TextField
+            <TextField style={{ width:"49%", marginRight:"1%"}}
                 value={cep}
                 onChange={(event) => {
                     setCep(event.target.value);
@@ -37,13 +37,13 @@ function DadosEntrega({ aoEnviar }) {
                 margin="normal"
             />
 
-            <Button
+            <Button style={{ width:"49%", marginLeft:"1%", marginBottom: "-61px", height: "56px"}}
                 variant="text"
                 color="secondary">
                 Não sei meu CEP 
             </Button>
 
-            <TextField
+            <TextField style={{ width:"49%", marginRight:"1%"}}
                 value={numero}
                 onChange={(event) => {
                     setNumero(event.target.value);
@@ -56,7 +56,7 @@ function DadosEntrega({ aoEnviar }) {
                 margin="normal"
             />
 
-            <TextField
+            <TextField style={{ width:"49%", marginLeft:"1%"}}
                 value={complemento}
                 onChange={(event) => {
                     setComplemento(event.target.value);
@@ -82,7 +82,7 @@ function DadosEntrega({ aoEnviar }) {
                 fullWidth
             />
 
-            <TextField
+            <TextField style={{ width:"49%", marginRight:"1%"}}
                 value={estado}
                 onChange={(event) => {
                     setEstado(event.target.value);
@@ -94,7 +94,7 @@ function DadosEntrega({ aoEnviar }) {
                 variant="outlined"
                 margin="normal"
             />
-            <TextField
+            <TextField style={{ width:"49%", marginLeft:"1%"}}
                 value={cidade}
                 onChange={(event) => {
                     setCidade(event.target.value);
@@ -106,14 +106,23 @@ function DadosEntrega({ aoEnviar }) {
                 variant="outlined"
                 margin="normal"
             />
+            <div className="area-botoes">
+            <Button style={{ width:"30%"}}
+          variant="contained"
+          color="secondary"
+          type="submit">
+          
+          Voltar
+        </Button>
 
-            <Button
+            <Button style={{ width:"69%"}}
                 variant="contained"
                 color="primary"
                 type="submit"
                 fullWidth>
                 Finalizar Cadastro
             </Button>
+            </div>
 
         </form>
     );

@@ -3,22 +3,22 @@ import { Button, TextField } from '@material-ui/core';
 import ValidacaoCadastro from "../../contexts/ValidacaoCadastro"
 import useErros from '../../hooks/useErros';
 
-function DadosUsuario({ aoEnviar}) {
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
-    const validacoes = useContext(ValidacaoCadastro)
-    const [erros, validaCampos, possoEnviar] = useErros(validacoes);
+function DadosUsuario({ aoEnviar }) {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const validacoes = useContext(ValidacaoCadastro)
+  const [erros, validaCampos, possoEnviar] = useErros(validacoes);
 
 
-    return (
-        <form
+  return (
+    <form
       onSubmit={(event) => {
         event.preventDefault();
         if (possoEnviar()) {
           aoEnviar({ email, senha });
         }
       }}>
-          
+
       <TextField
         value={email}
         onChange={(event) => {
@@ -50,24 +50,17 @@ function DadosUsuario({ aoEnviar}) {
         margin="normal"
         fullWidth
       />
-            <div className="area-botoes">
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    type="submit">
-                    Voltar
-                </Button>
+      <Button
+        variant="contained"
+        color="primary"
+        type="submit"
+        fullWidth>
+        Avançar
+      </Button>
 
-                <Button
-                    variant="contained"
-                    color="primary"
-                    type="submit">
-                    Avançar
-                </Button>
-            </div>
 
-        </form>
-    )
+    </form>
+  )
 }
 
 export default DadosUsuario

@@ -6,7 +6,7 @@
     position: relative;
     min-width: 0;
     flex-direction: column;
-    vertical-align: top;
+    vertical-align:auto;
     width: 50%;
 }
 
