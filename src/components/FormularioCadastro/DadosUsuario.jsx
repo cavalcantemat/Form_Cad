@@ -18,7 +18,6 @@ function DadosUsuario({ aoEnviar }) {
           aoEnviar({ email, senha });
         }
       }}>
-
       <TextField
         value={email}
         onChange={(event) => {
@@ -28,10 +27,10 @@ function DadosUsuario({ aoEnviar }) {
         name="email"
         label="Email"
         type="email"
-        required
         variant="outlined"
         margin="normal"
         fullWidth
+        required
       />
       <TextField
         value={senha}
@@ -45,10 +44,10 @@ function DadosUsuario({ aoEnviar }) {
         name="senha"
         label="Senha"
         type="password"
-        required
         variant="outlined"
         margin="normal"
         fullWidth
+        required
       />
       <Button
         variant="contained"

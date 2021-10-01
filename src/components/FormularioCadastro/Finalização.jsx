@@ -2,10 +2,10 @@ import React from 'react';
 
 import Swal from 'sweetalert2'
 
-function Finalizacao() {
+function Finalizacao({aoEnviar}) {
 
 
-    function Teste() {
+    function CompraRealizada() {
         Swal.fire(
             'COMPRA REALIZADA!',
             'Sua compra foi realizada com sucesso',
@@ -15,7 +15,8 @@ function Finalizacao() {
 
     return (
         <form>
-            {Teste()}
+            {CompraRealizada()}
+            alert({})
         </form>
     );
 }

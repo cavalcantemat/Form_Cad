@@ -3,7 +3,7 @@ import DadosPessoais from "./DadosPessoais";
 import DadosUsuario from "./DadosUsuario";
 import DadosEntrega from "./DadosEntrega";
 import Finalizacao from "./Finalização"
-import { Stepper, Step, StepLabel,Button } from "@material-ui/core";
+import { Stepper, Step, StepLabel } from "@material-ui/core";
 
 
 function FormularioCadastro({ aoEnviar }) {
@@ -19,7 +19,7 @@ function FormularioCadastro({ aoEnviar }) {
         <DadosUsuario aoEnviar={coletarDados} />,
         <DadosPessoais aoEnviar={coletarDados} />,
         <DadosEntrega aoEnviar={coletarDados} />,
-        <Finalizacao />,
+        <Finalizacao aoEnviar={coletarDados}/>,
     ];
 
     function coletarDados(dados) {
@@ -43,16 +43,18 @@ function FormularioCadastro({ aoEnviar }) {
         <>
             <Stepper activeStep={etapaAtual}>
                 <Step>
-                     <StepLabel><Button id="Login" >Login</Button></StepLabel> {/*onClick={(e) => witchButton(e)}*/}
+                     <StepLabel>Login </StepLabel> {/*onClick={(e) => witchButton(e)}*/}
+                </Step>
+                
+
+                <Step>
+                    <StepLabel>Pessoal</StepLabel>
                 </Step>
                 <Step>
-                    <StepLabel><Button>Pessoal</Button></StepLabel>
+                    <StepLabel>Entrega</StepLabel>
                 </Step>
                 <Step>
-                    <StepLabel><Button>Entrega</Button></StepLabel>
-                </Step>
-                <Step>
-                    <StepLabel><Button>Finalização</Button></StepLabel>
+                    <StepLabel>Finalização</StepLabel>
                 </Step>
             </Stepper>
             {formularios[etapaAtual]}

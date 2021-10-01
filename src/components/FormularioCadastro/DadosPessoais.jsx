@@ -2,12 +2,16 @@ import React, { useState, useContext } from 'react';
 import { Button, TextField, Switch, FormControlLabel } from '@material-ui/core';
 import ValidacaoCadastro from '../../contexts/ValidacaoCadastro';
 import useErros from '../../hooks/useErros';
+import InputCpf from '../../contexts/InputCpf';
+import InputTel from '../../contexts/InputTel';
+import '../../assets/css/index.css';
 
 function DadosPessoais({ aoEnviar }) {
 
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState(" ");
+  const [telefone, setTelefone] = useState(" ");
   const [promocoes, setPromocoes] = useState(true);
   const [novidades, setNovidades] = useState(false);
   const validacoes = useContext(ValidacaoCadastro)
@@ -18,7 +22,7 @@ function DadosPessoais({ aoEnviar }) {
       onSubmit={(event) => {
         event.preventDefault();
         if (possoEnviar()) {
-          aoEnviar({ nome, sobrenome, cpf, novidades, promocoes });
+          aoEnviar({ nome, sobrenome, cpf, telefone, novidades, promocoes });
         }
       }}>
 
@@ -50,8 +54,7 @@ function DadosPessoais({ aoEnviar }) {
         margin="normal"
         fullWidth 
       />
-
-      <TextField
+      <InputCpf style={{ width: "50%", marginRight: "1%" }}
         value={cpf}
         onChange={(event) => {
           setCpf(event.target.value);
@@ -65,6 +68,17 @@ function DadosPessoais({ aoEnviar }) {
         variant="outlined"
         margin="normal"
         fullWidth 
+      />
+      <InputTel style={{ width: "50%", marginLeft: "1%" }}
+        value={telefone}
+        onChange={(event) => {
+          setTelefone(event.target.value);
+        }}
+        id="telefone"
+        name="telefone"
+        label="Telefone"
+        variant="outlined"
+        margin="normal" 
       />
       <FormControlLabel
         label="Desejo receber promoções"

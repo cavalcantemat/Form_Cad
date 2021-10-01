@@ -9,6 +9,7 @@
     "address-br": "^1.5.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-input-mask": "^2.0.4",
     "react-scripts": "4.0.3",
     "sweetalert2": "^11.1.7",
     "web-vitals": "^1.1.2"
