@@ -3,11 +3,11 @@ import DadosPessoais from "./DadosPessoais";
 import DadosUsuario from "./DadosUsuario";
 import DadosEntrega from "./DadosEntrega";
 import Finalizacao from "./Finalização"
-import { Stepper, Step, StepLabel } from "@material-ui/core";
+import { Stepper, Step, StepLabel,Button } from "@material-ui/core";
 
 
 function FormularioCadastro({ aoEnviar }) {
-    const [etapaAtual, setEtapaAtual] = useState(0);
+    let [etapaAtual, setEtapaAtual] = useState(0);
     const [dadosColetados, setDados] = useState({});
     useEffect(() => {
         if (etapaAtual === formularios.length - 1) {
@@ -25,8 +25,16 @@ function FormularioCadastro({ aoEnviar }) {
     function coletarDados(dados) {
         setDados({ ...dadosColetados, ...dados });
         proximo();
-
     }
+    // function witchButton(e) {
+    //     let id= e.currentTarget.id
+    //     if (id === "Login") {
+    //         alert(id)
+    //     } else if (id === undefined) {
+    //         setEtapaAtual(etapaAtual + 1);
+    //     }
+    // }
+
     function proximo() {
         setEtapaAtual(etapaAtual + 1);
     }
@@ -35,16 +43,16 @@ function FormularioCadastro({ aoEnviar }) {
         <>
             <Stepper activeStep={etapaAtual}>
                 <Step>
-                    <StepLabel>Login</StepLabel>
+                     <StepLabel><Button id="Login" >Login</Button></StepLabel> {/*onClick={(e) => witchButton(e)}*/}
                 </Step>
                 <Step>
-                    <StepLabel>Pessoal</StepLabel>
+                    <StepLabel><Button>Pessoal</Button></StepLabel>
                 </Step>
                 <Step>
-                    <StepLabel>Entrega</StepLabel>
+                    <StepLabel><Button>Entrega</Button></StepLabel>
                 </Step>
                 <Step>
-                    <StepLabel>Finalização</StepLabel>
+                    <StepLabel><Button>Finalização</Button></StepLabel>
                 </Step>
             </Stepper>
             {formularios[etapaAtual]}

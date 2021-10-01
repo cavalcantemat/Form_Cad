@@ -11,14 +11,12 @@
 }
 
 .MuiButton-root {
-    
     width: 20vw;
     margin-left: 2.5px;
     margin-right: 2.5px;
 }
 
 .MuiButton-root .descobreCep {
-    
     width: 1vw;
     margin-left: 2.5px;
     margin-right: 2.5px;

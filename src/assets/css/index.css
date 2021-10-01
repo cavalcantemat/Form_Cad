@@ -28,6 +28,7 @@
 	transition: .5s;
 	display: block;
 	border-bottom: 1px solid #9799A6;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 
 .cabecalhoPrincipal-nav-link {

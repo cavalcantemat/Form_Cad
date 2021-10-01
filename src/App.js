@@ -1,12 +1,10 @@
-import React, { Component } from "react";
+import { React, Component } from "react";
 import "./App.css";
 import "../src/assets/css/index.css";
 import "../src/assets/css/flexbox.css";
 import FormularioCadastro from "./components/FormularioCadastro/FormularioCadastro";
 import { Container } from "@material-ui/core";
-
 import ValidacaoCadastro from "./contexts/ValidacaoCadastro";
-
 import { validaCpf, validaSenha } from "./models/cadastro";
 class App extends Component {
   render() {

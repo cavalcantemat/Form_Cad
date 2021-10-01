@@ -19,12 +19,12 @@ function DadosEntrega({ aoEnviar }) {
 
     return (
         <form onSubmit={
-            (event) => { 
+            (event) => {
                 event.preventDefault();
                 aoEnviar({ cep, endereco, numero, estado, cidade });
             }}>
 
-            <TextField style={{ width:"49%", marginRight:"1%"}}
+            <TextField style={{ width: "49%", marginRight: "1%" }}
                 value={cep}
                 onChange={(event) => {
                     setCep(event.target.value);
@@ -37,13 +37,13 @@ function DadosEntrega({ aoEnviar }) {
                 margin="normal"
             />
 
-            <Button style={{ width:"49%", marginLeft:"1%", marginBottom: "-61px", height: "56px"}}
+            <Button style={{ width: "49%", marginLeft: "1%", marginBottom: "-61px", height: "56px" }}
                 variant="text"
                 color="secondary">
-                Não sei meu CEP 
+                Não sei meu CEP
             </Button>
 
-            <TextField style={{ width:"49%", marginRight:"1%"}}
+            <TextField style={{ width: "49%", marginRight: "1%" }}
                 value={numero}
                 onChange={(event) => {
                     setNumero(event.target.value);
@@ -56,7 +56,7 @@ function DadosEntrega({ aoEnviar }) {
                 margin="normal"
             />
 
-            <TextField style={{ width:"49%", marginLeft:"1%"}}
+            <TextField style={{ width: "49%", marginLeft: "1%" }}
                 value={complemento}
                 onChange={(event) => {
                     setComplemento(event.target.value);
@@ -82,7 +82,7 @@ function DadosEntrega({ aoEnviar }) {
                 fullWidth
             />
 
-            <TextField style={{ width:"49%", marginRight:"1%"}}
+            <TextField style={{ width: "49%", marginRight: "1%" }}
                 value={estado}
                 onChange={(event) => {
                     setEstado(event.target.value);
@@ -94,7 +94,7 @@ function DadosEntrega({ aoEnviar }) {
                 variant="outlined"
                 margin="normal"
             />
-            <TextField style={{ width:"49%", marginLeft:"1%"}}
+            <TextField style={{ width: "49%", marginLeft: "1%" }}
                 value={cidade}
                 onChange={(event) => {
                     setCidade(event.target.value);
@@ -107,23 +107,21 @@ function DadosEntrega({ aoEnviar }) {
                 margin="normal"
             />
             <div className="area-botoes">
-            <Button style={{ width:"30%"}}
-          variant="contained"
-          color="secondary"
-          type="submit">
-          
-          Voltar
-        </Button>
+                <Button style={{ width: "30%" }}
+                    variant="contained"
+                    color="secondary"
+                    type="submit">
+                    Voltar
+                </Button>
 
-            <Button style={{ width:"69%"}}
-                variant="contained"
-                color="primary"
-                type="submit"
-                fullWidth>
-                Finalizar Cadastro
-            </Button>
+                <Button style={{ width: "69%" }}
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                    fullWidth>
+                    Finalizar Cadastro
+                </Button>
             </div>
-
         </form>
     );
 }

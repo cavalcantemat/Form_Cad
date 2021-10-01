@@ -20,7 +20,7 @@ function DadosPessoais({ aoEnviar }) {
         if (possoEnviar()) {
           aoEnviar({ nome, sobrenome, cpf, novidades, promocoes });
         }
-      }} >
+      }}>
 
       <TextField
         value={nome}
@@ -35,7 +35,8 @@ function DadosPessoais({ aoEnviar }) {
         name="nome"
         variant="outlined"
         margin="normal"
-        fullWidth />
+        fullWidth 
+      />
 
       <TextField
         value={sobrenome}
@@ -47,7 +48,8 @@ function DadosPessoais({ aoEnviar }) {
         label="Sobrenome"
         variant="outlined"
         margin="normal"
-        fullWidth />
+        fullWidth 
+      />
 
       <TextField
         value={cpf}
@@ -62,7 +64,8 @@ function DadosPessoais({ aoEnviar }) {
         label="CPF"
         variant="outlined"
         margin="normal"
-        fullWidth />
+        fullWidth 
+      />
       <FormControlLabel
         label="Desejo receber promoções"
         control={
@@ -72,9 +75,10 @@ function DadosPessoais({ aoEnviar }) {
               setPromocoes(event.target.checked);
             }}
             name="promocoes"
-            color="primary" />
-
-        } />
+            color="primary" 
+          />
+        }
+      />
 
       <FormControlLabel
         label="Desejo receber novidades"
@@ -85,25 +89,25 @@ function DadosPessoais({ aoEnviar }) {
               setNovidades(event.target.checked);
             }}
             name="novidades"
-            color="primary" />
+            color="primary" 
+          /> 
+        }
+      />
 
-        } />
-<div className="area-botoes">
-        <Button style={{ width:"30%"}}
+      <div className="area-botoes">
+        <Button style={{ width: "30%" }}
           variant="contained"
           color="secondary"
           type="submit">
-          
           Voltar
         </Button>
 
-        <Button style={{ width:"69%"}}
-          variant="contained"
+        <Button style={{ width: "69%" }}  variant="contained"
           color="primary"
           type="submit">
-          
           Avançar
         </Button>
+        
       </div>
     </form>
   );
